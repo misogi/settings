@@ -1,0 +1,59 @@
+#!/bin/bash
+# chkconfig: 2345 98 02
+# description: Starts and stops Solr production
+
+# source function library
+
+set -e
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+SOLR_HOME=/opt/jetty
+
+PIDFILE=/var/run/solr.production.pid
+
+START_COMMAND="/usr/bin/java"
+START_OPTS="-server -Xms1024M -Xmx2048M -jar start.jar"
+LOG_FILE="/var/log/solr.log"
+NAME="Solr"
+
+start() {
+  echo -n "Starting $NAME"
+  if [ -f $PIDFILE ]; then
+    echo -n "$PIDFILE exists. $NAME may be running."
+  else
+    cd $SOLR_HOME
+    sudo -u nakagawa $START_COMMAND $START_OPTS 2> $LOG_FILE &
+    sleep 2
+    echo `ps -ef | grep -v grep | grep "$START_COMMAND" | awk '{print $2}'` > $PIDFILE
+    echo "Done"
+  fi
+  return 0
+}
+
+stop() {
+  echo -n "Stopping $NAME"
+  kill `cat $PIDFILE`
+  rm $PIDFILE
+  echo "Done"
+  return 0
+}
+
+case "$1" in
+  start)
+    start
+  ;;
+  stop)
+    stop
+  ;;
+  restart)
+    stop
+    sleep 5
+    start
+  ;;
+
+*)
+echo "Usage: $0 (start | stop | restart)"
+exit 1
+esac
+
