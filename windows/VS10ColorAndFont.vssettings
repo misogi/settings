@@ -70,13 +70,22 @@
 							<Item Name="HTML Operator" Foreground="0x003C3CF7" Background="0x02000000" BoldFont="No"/>
 							<Item Name="HTML Element Name" Foreground="0x008585CD" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Brace Outline" Foreground="0x00FFFF00" Background="0x02000000" BoldFont="No"/>
-							<Item Name="ReSharper Class Identifier" Foreground="0x0080FF00" Background="0x02000000" BoldFont="No"/>
-							<Item Name="ReSharper Current Line Highlight" Foreground="0x02000000" Background="0x00005B5B" BoldFont="No"/>
+							<Item Name="ReSharper Class Identifier" Foreground="0x003CFF1A" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Current Line Highlight" Foreground="0x02000000" Background="0x00280000" BoldFont="No"/>
 							<Item Name="ReSharper Delegate Identifier" Foreground="0x00FFB5B5" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Enum Identifier" Foreground="0x00FFC8C8" Background="0x02000000" BoldFont="No"/>
-							<Item Name="ReSharper Namespace Identifier" Foreground="0x00FFCECE" Background="0x02000000" BoldFont="No"/>
-							<Item Name="ReSharper Static Class Identifier" Foreground="0x00FFB3B3" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Field Identifier" Foreground="0x00C8F46C" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Hyperlink" Foreground="0x00FF7575" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Interface Identifier" Foreground="0x00F9758F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Local Variable Identifier" Foreground="0x00D0FFDA" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Method Identifier" Foreground="0x00FFFF02" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Mutable Local Variable Identifier" Foreground="0x00F2DDF0" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Namespace Identifier" Foreground="0x00FFC4C4" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Static Class Identifier" Foreground="0x00BAFFB3" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Struct Identifier" Foreground="0x00FFBFBF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Todo Item" Foreground="0x00800000" Background="0x0000FFFF" BoldFont="Yes"/>
+							<Item Name="ReSharper Type Parameter Identifier" Foreground="0x00EC7BAE" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Warning" Foreground="0x00359FFF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="SQL DML Marker" Foreground="0x00696969" Background="0x02000000" BoldFont="No"/>
 							<Item Name="urlformat" Foreground="0x003C3CF7" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XmlDocTagClassificationFormat" Foreground="0x00696969" Background="0x02000000" BoldFont="No"/>
@@ -108,11 +117,8 @@
 							<Item Name="XAML Attribute Value" Foreground="0x004B96FF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XML CData Section" Foreground="0x00FFFFFF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XML Keyword" Foreground="0x00EDC065" Background="0x02000000" BoldFont="No"/>
-							<Item Name="XML Comment" Foreground="0x00696969" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Comment" Foreground="0x01000005" Background="0x00002F00" BoldFont="No"/>
 							<Item Name="XML Text" Foreground="0x00FFFFFF" Background="0x02000000" BoldFont="No"/>
-							<Item Name="XML Doc Comment" Foreground="0x00696969" Background="0x02000000" BoldFont="No"/>
-							<Item Name="XML Doc Tag" Foreground="0x00696969" Background="0x02000000" BoldFont="No"/>
-							<Item Name="XML Doc Attribute" Foreground="0x00696969" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XML Processing Instruction" Foreground="0x004B96FF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XML Delimiter" Foreground="0x003C3CF7" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XML Name" Foreground="0x008585CD" Background="0x02000000" BoldFont="No"/>
@@ -121,10 +127,7 @@
 							<Item Name="XML Attribute Value" Foreground="0x004B96FF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XSLT Keyword" Foreground="0x00EDC065" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Brace Matching (Rectangle)" Foreground="0x02000000" Background="0x00808080" BoldFont="Yes"/>
-							<Item Name="Coverage Touched Area" Foreground="0x00000000" Background="0x00ACD0B4" BoldFont="No"/>
-							<Item Name="Coverage Partially Touched Area" Foreground="0x00000000" Background="0x00A4E1FF" BoldFont="No"/>
-							<Item Name="Keyword" Foreground="0x00EDC065" Background="0x02000000" BoldFont="No"/>
-							<Item Name="Comment" Foreground="0x01000005" Background="0x001B351A" BoldFont="No"/>
+							<Item Name="Keyword" Foreground="0x0088FDF8" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Compiler Error" Foreground="0x000000FF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Code Snippet Field" Foreground="0x01000000" Background="0x00646464" BoldFont="No"/>
 							<Item Name="Code Snippet Dependent Field" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
@@ -151,9 +154,11 @@
 							<Item Name="MarkerFormatDefinition/HighlightedReference" Foreground="0x02000000" Background="0x009F7260" BoldFont="No"/>
 							<Item Name="Collapsible Text" Foreground="0x00808080" Background="0x01000003" BoldFont="No"/>
 							<Item Name="outlining.collapsehintadornment" Foreground="0x00FFFFFF" Background="0x009F7260" BoldFont="No"/>
+							<Item Name="数" Foreground="0x0013A5D5" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Number" Foreground="0x0050AF63" Background="0x02000000" BoldFont="No"/>
-							<Item Name="String" Foreground="0x003C3CF7" Background="0x02000000" BoldFont="No"/>
-							<Item Name="String(C# @ Verbatim)" Foreground="0x003C3CF7" Background="0x02000000" BoldFont="No"/>
+							<Item Name="String" Foreground="0x007093D3" Background="0x02000000" BoldFont="No"/>
+							<Item Name="String(C# @ Verbatim)" Foreground="0x00FF00FF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Operator" Foreground="0x0077E9F9" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Read-Only Region" Foreground="0x01000002" Background="0x00646464" BoldFont="No"/>
 							<Item Name="Warning" Foreground="0x009DF79D" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Warning Lines Path" Foreground="0x00F07800" Background="0x00E6EFEE" BoldFont="No"/>
