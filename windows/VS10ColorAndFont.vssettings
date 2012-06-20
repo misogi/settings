@@ -70,7 +70,7 @@
 							<Item Name="HTML Operator" Foreground="0x003C3CF7" Background="0x02000000" BoldFont="No"/>
 							<Item Name="HTML Element Name" Foreground="0x008585CD" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Brace Outline" Foreground="0x00FFFF00" Background="0x02000000" BoldFont="No"/>
-							<Item Name="ReSharper Class Identifier" Foreground="0x003CFF1A" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Class Identifier" Foreground="0x00FF8353" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Current Line Highlight" Foreground="0x02000000" Background="0x00280000" BoldFont="No"/>
 							<Item Name="ReSharper Delegate Identifier" Foreground="0x00FFB5B5" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Enum Identifier" Foreground="0x00FFC8C8" Background="0x02000000" BoldFont="No"/>
@@ -78,7 +78,7 @@
 							<Item Name="ReSharper Hyperlink" Foreground="0x00FF7575" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Interface Identifier" Foreground="0x00F9758F" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Local Variable Identifier" Foreground="0x00D0FFDA" Background="0x02000000" BoldFont="No"/>
-							<Item Name="ReSharper Method Identifier" Foreground="0x00FFFF02" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Method Identifier" Foreground="0x00FFED84" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Mutable Local Variable Identifier" Foreground="0x00F2DDF0" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Namespace Identifier" Foreground="0x00FFC4C4" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Static Class Identifier" Foreground="0x00BAFFB3" Background="0x02000000" BoldFont="No"/>
@@ -127,7 +127,7 @@
 							<Item Name="XML Attribute Value" Foreground="0x004B96FF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="XSLT Keyword" Foreground="0x00EDC065" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Brace Matching (Rectangle)" Foreground="0x02000000" Background="0x00808080" BoldFont="Yes"/>
-							<Item Name="Keyword" Foreground="0x0088FDF8" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Keyword" Foreground="0x00E98EFF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Compiler Error" Foreground="0x000000FF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Code Snippet Field" Foreground="0x01000000" Background="0x00646464" BoldFont="No"/>
 							<Item Name="Code Snippet Dependent Field" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
