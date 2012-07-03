@@ -4,7 +4,7 @@
 #
 export LANG=ja_JP.UTF-8
 
-###
+### 
 # Set shell options
 ###
 setopt auto_menu auto_cd correct auto_name_dirs auto_remove_slash
