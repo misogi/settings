@@ -4,6 +4,10 @@
 #
 export LANG=ja_JP.UTF-8
 
+# home and end key
+
+bindkey "^[OH" beginning-of-line
+bindkey "^[OF" end-of-line
 
 ### 
 # Set shell options
