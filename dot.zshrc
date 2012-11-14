@@ -105,6 +105,8 @@ alias df="df -h"
 
 alias bl="bluefish"
 
+alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
+
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
