@@ -49,6 +49,32 @@ function rprompt-git-current-branch {
         echo "$color$name$action%f%b "
 }
 
+function prompt-svn {
+    local __svn_status st revision
+    __svn_status=(`svn info 2> /dev/null |grep 'リビジョン: '`)
+    if [[ $__svn_status  == '' ]]
+    then
+        return
+    fi
+    
+    revision=`echo ${__svn_status[2]}`
+    
+    st=`svn status 2> /dev/null`
+    
+    if [[ -n `echo "$st" | grep "^M"` ]]; then
+        color=%F{red}
+    elif [[ -n `echo "$st" | grep "^?"` ]]; then
+        color=%F{magenta}
+    elif [[ -n `echo "$st" | grep "^D"` ]]; then
+        color=%F{magenta}
+    elif [[ -n `echo "$st" | grep "^ M"` ]]; then
+        color=%F{red}
+    else
+        color=%F{green}
+    fi
+    echo "$color$revision%f"
+}
+
 #source auto-fu.zsh
 #zle-line-init () {auto-fu-init;}; zle -N zle-line-init
 #zstyle ':completion:*' completer _oldlist _complete
@@ -67,7 +93,7 @@ esac
 # VCS settings
 
 PROMPT=$'%{\e[36m%}%T%%%{\e[m%} '
-RPROMPT=$'[`rprompt-git-current-branch`%{\e[36m%}%~]%{\e[m%}'
+RPROMPT=$'[`prompt-svn``rprompt-git-current-branch` %{\e[36m%}%~]%{\e[m%}'
 PROMPT2="%_%% "
 
 # ほか設定
