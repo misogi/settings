@@ -72,8 +72,8 @@ PROMPT2="%_%% "
 
 # ほか設定
 HISTFILE=~/.zsh_history
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=20000
+SAVEHIST=20000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 setopt auto_pushd	 #ディレクトリ履歴
