@@ -12,7 +12,7 @@ bindkey "^[OF" end-of-line
 ### 
 # Set shell options
 ###
-setopt auto_menu auto_cd correct auto_name_dirs auto_remove_slash
+setopt auto_menu auto_cd auto_name_dirs auto_remove_slash
 setopt extended_history hist_ignore_dups hist_ignore_space prompt_subst
 setopt pushd_ignore_dups rm_star_silent sun_keyboard_hack
 setopt extended_glob list_types no_beep always_last_prompt
