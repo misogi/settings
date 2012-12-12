@@ -12,11 +12,11 @@ bindkey "^[OF" end-of-line
 ### 
 # Set shell options
 ###
-setopt auto_menu auto_cd auto_name_dirs auto_remove_slash
+setopt auto_menu auto_remove_slash
 setopt extended_history hist_ignore_dups hist_ignore_space prompt_subst
 setopt pushd_ignore_dups rm_star_silent sun_keyboard_hack
 setopt extended_glob list_types no_beep always_last_prompt
-setopt cdable_vars auto_param_keys
+setopt auto_param_keys
 
 setopt prompt_subst
 
@@ -123,21 +123,17 @@ alias lf="ls -F"
 alias ll="ls -l"
 alias buinit="bundle && rake db:migrate parallel:prepare"
 alias bue="bundle exec"
-alias buec="CUCUMBER_FORMAT=progress rake parallel:features"
-alias buer="DEFER_GC=20 ENABLED_DEFEERD=true rake parallel:spec"
 
 alias du="du -h"
 alias df="df -h"
-
-alias bl="bluefish"
 
 alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
 
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-export DISABLE_COVERAGE=
 # export CUCUMBER_FORMAT=pretty
-export PATH=$PATH:~/sh
-export COVERAGE=false
-export RSPEC_FORMAT=progress
+export PATH=$PATH:~/sh:~/appz/play
+
+export _JAVA_OPTIONS="-Xms256m -Xmx256m"
+
