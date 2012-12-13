@@ -115,25 +115,28 @@ preexec () { print -Pn "\e]0;$1\a" }
 #aliases
 
 alias where="command -v"
-alias j="jobs -l"
 
 alias ls="ls --color=auto"
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
+alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
+
+# alias for Ruby on Rails
 alias buinit="bundle && rake db:migrate parallel:prepare"
 alias be="bundle exec"
 
 alias du="du -h"
 alias df="df -h"
 
+# for colorized svn diff
 alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
+
+# for Play Framework
+export _JAVA_OPTIONS="-Xms256m -Xmx256m"
 
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# export CUCUMBER_FORMAT=pretty
 export PATH=$PATH:~/sh:~/appz/play
-
-export _JAVA_OPTIONS="-Xms256m -Xmx256m"
 
