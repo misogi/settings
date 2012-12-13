@@ -122,7 +122,7 @@ alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
 alias buinit="bundle && rake db:migrate parallel:prepare"
-alias bue="bundle exec"
+alias be="bundle exec"
 
 alias du="du -h"
 alias df="df -h"
