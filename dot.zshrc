@@ -14,7 +14,7 @@ bindkey "^[OF" end-of-line
 ###
 setopt auto_menu auto_remove_slash
 setopt extended_history hist_ignore_dups hist_ignore_space prompt_subst
-setopt pushd_ignore_dups rm_star_silent sun_keyboard_hack
+setopt rm_star_silent sun_keyboard_hack
 setopt extended_glob list_types no_beep always_last_prompt
 setopt auto_param_keys
 
@@ -102,7 +102,8 @@ HISTSIZE=20000
 SAVEHIST=20000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
-setopt auto_pushd	 #ディレクトリ履歴
+
+setopt auto_pushd pushd_ignore_dups #ディレクトリ履歴
 
 autoload -U compinit
 compinit
