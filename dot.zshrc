@@ -49,6 +49,23 @@ function rprompt-git-current-branch {
         echo "$color$name$action%f%b "
 }
 
+# push忘れ防止関数
+# http://yuroyoro.hatenablog.com/entry/20110219/1298089409
+function _git_not_pushed()
+{
+    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ]; then
+        head="$(git rev-parse HEAD)"
+        for x in $(git rev-parse --remotes)
+        do
+            if [ "$head" = "$x" ]; then
+                return 0
+            fi
+        done
+        echo "%B%F{red}{PUSH忘れ}%f%b"
+    fi
+    return 0
+}
+
 function prompt-svn {
     local __svn_status st revision
     __svn_status=(`svn info 2> /dev/null |grep 'リビジョン: '`)
@@ -92,7 +109,7 @@ esac
 
 # VCS settings
 
-PROMPT=$'%{\e[36m%}%T%%%{\e[m%} '
+PROMPT=$'%{\e[36m%}%T%%%{\e[m%}`_git_not_pushed` '
 RPROMPT=$'[`prompt-svn``rprompt-git-current-branch` %{\e[36m%}%~]%{\e[m%}'
 PROMPT2="%_%% "
 
