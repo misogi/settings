@@ -147,6 +147,10 @@ alias be="bundle exec"
 alias du="du -h"
 alias df="df -h"
 
+# alias for git
+alias gl="git log --pretty='format:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph"
+
+
 # for colorized svn diff
 alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
 
