@@ -12,15 +12,45 @@ bindkey "^[OF" end-of-line
 ### 
 # Set shell options
 ###
-setopt auto_menu auto_remove_slash
-setopt extended_history hist_ignore_dups hist_ignore_space prompt_subst
-setopt rm_star_silent sun_keyboard_hack
-setopt extended_glob list_types no_beep always_last_prompt
-setopt auto_param_keys
+setopt auto_menu          # 補完キー連打で次の候補     
+setopt auto_param_slash   # 補完の時/を自動で入れる 
+setopt rm_star_silent     # rm * のとき確認
+setopt extended_glob      # ファイル名の指定が柔軟になる *.(cpp|h)
+setopt list_types         # ファイル種別をマーク表示
+setopt no_beep            # ビープ音鳴らさない
+setopt always_last_prompt # カーソル位置を動かさずファイル名一覧を表示
+setopt auto_param_keys    # カッコの対応などを補完
+setopt prompt_subst       # プロンプトに環境変数を通す
+setopt hist_ignore_dups   # ignore duplication command history list
+setopt share_history      # share command history data
+setopt auto_pushd         # ふつーにcdするときもスタックに入れる
+setopt pushd_ignore_dups  # スタックから重複を削除
+setopt hist_ignore_space  # 行頭にスペースがあったらhistoryに保存しない
 
-setopt prompt_subst
+unsetopt extended_history   # 履歴に時間を記録
+unsetopt sun_keyboard_hack  # `のtypoをカバーする
 
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
+autoload -U compinit
+compinit -u
+
+# VCS settings
+
+PROMPT=$'%{\e[36m%}%T%%%{\e[m%}`_git_not_pushed` '
+RPROMPT=$'[`prompt-svn``rprompt-git-current-branch` %{\e[36m%}%~]%{\e[m%}'
+PROMPT2="%_%% "
+
+# ほか設定
+HISTFILE=~/.zsh_history
+HISTSIZE=20000
+SAVEHIST=20000
+
+zstyle ':completion:*' list-colors 'no=00' 'fi=00' 'di=00;34' 'ln=01;36' 'pi=40;33' 'so=40;33' 'bd=40;33' 'cd=40;33' 'ex=01;31' 'or=04;36' '*.tgz=01;32' '*.gz=01;32' '*.tar=01;32'
+
+# apt-getとか時間のかかるコマンドにキャッシュを使う
+zstyle ':completion:*' use-cache true
+# 補完候補を ←↓↑→ で選択 (補完候補が色分け表示される)
+zstyle ':completion:*:default' menu select=1
 
 function rprompt-git-current-branch {
         local name st color gitdir action
@@ -92,9 +122,6 @@ function prompt-svn {
     echo "$color$revision%f"
 }
 
-#source auto-fu.zsh
-#zle-line-init () {auto-fu-init;}; zle -N zle-line-init
-#zstyle ':completion:*' completer _oldlist _complete
 
 ## Default shell configuration
 
@@ -107,27 +134,8 @@ kterm*|xterm)
   ;;
 esac
 
-# VCS settings
 
-PROMPT=$'%{\e[36m%}%T%%%{\e[m%}`_git_not_pushed` '
-RPROMPT=$'[`prompt-svn``rprompt-git-current-branch` %{\e[36m%}%~]%{\e[m%}'
-PROMPT2="%_%% "
-
-# ほか設定
-HISTFILE=~/.zsh_history
-HISTSIZE=20000
-SAVEHIST=20000
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data
-
-setopt auto_pushd pushd_ignore_dups #ディレクトリ履歴
-
-autoload -U compinit
-compinit
-
-zstyle ':completion:*' list-colors 'no=00' 'fi=00' 'di=00;34' 'ln=01;36' 'pi=40;33' 'so=40;33' 'bd=40;33' 'cd=40;33' 'ex=01;31' 'or=04;36' '*.tgz=01;32' '*.gz=01;32' '*.tar=01;32'
-
-# ターミナル
+# ターミナルタイトル
 preexec () { print -Pn "\e]0;$1\a" }
 
 #aliases
@@ -150,15 +158,8 @@ alias df="df -h"
 # alias for git
 alias gl="git log --pretty='format:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar' --graph"
 
+alias globalip='curl ipcheck.ieserver.net'
 
 # for colorized svn diff
 alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
-
-# for Play Framework
-export _JAVA_OPTIONS="-Xms256m -Xmx256m"
-
-# Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export PATH=$PATH:~/sh:~/appz/play
 
