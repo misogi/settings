@@ -33,12 +33,9 @@ unsetopt sun_keyboard_hack  # `のtypoをカバーする
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 autoload -U compinit
 compinit -u
+autoload vcs_info
 
 # VCS settings
-
-PROMPT=$'%{\e[36m%}%T%%%{\e[m%}`_git_not_pushed` '
-RPROMPT=$'[`prompt-svn``rprompt-git-current-branch` %{\e[36m%}%~]%{\e[m%}'
-PROMPT2="%_%% "
 
 # ほか設定
 HISTFILE=~/.zsh_history
@@ -52,7 +49,29 @@ zstyle ':completion:*' use-cache true
 # 補完候補を ←↓↑→ で選択 (補完候補が色分け表示される)
 zstyle ':completion:*:default' menu select=1
 
-function rprompt-git-current-branch {
+# for git
+#zstyle ":vcs_info:*" enable git
+
+# commitしていない変更をチェックする
+#zstyle ":vcs_info:git:*" check-for-changes true
+# gitリポジトリに対して、変更情報とリポジトリ情報を表示する
+#zstyle ":vcs_info:git:*" formats "%c%u%b"
+# gitリポジトリに対して、コンフリクトなどの情報を表示する
+#zstyle ":vcs_info:git:*" actionformats "%c%u<%a>[%b:%r]"
+# addしていない変更があることを示す文字列
+#zstyle ":vcs_info:git:*" unstagedstr "%F{red}"
+# commitしていないstageがあることを示す文字列
+#zstyle ":vcs_info:git:*" stagedstr "%F{yellow}"
+
+PROMPT=$'%{\e[36m%}%T%%%{\e[m%}`_git_not_pushed` '
+RPROMPT=$'[`prompt-svn``rprompt-git` %{\e[36m%}%~]%{\e[m%}'
+PROMPT2="%_%% "
+
+
+function rprompt-git {
+	if test -z $(git rev-parse --git-dir 2> /dev/null); then 
+	  return 
+	fi 
         local name st color gitdir action
         if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
                 return
@@ -61,9 +80,6 @@ function rprompt-git-current-branch {
         if [[ -z $name ]]; then
                 return
         fi
-
-        gitdir=`git rev-parse --git-dir 2> /dev/null`
-        action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
 
         st=`git status 2> /dev/null`
         if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
@@ -83,7 +99,10 @@ function rprompt-git-current-branch {
 # http://yuroyoro.hatenablog.com/entry/20110219/1298089409
 function _git_not_pushed()
 {
-    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ]; then
+  if test -z $(git rev-parse --git-dir 2> /dev/null); then 
+      return 
+  fi 
+  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ]; then
         head="$(git rev-parse HEAD)"
         for x in $(git rev-parse --remotes)
         do
@@ -133,7 +152,6 @@ kterm*|xterm)
   }
   ;;
 esac
-
 
 # ターミナルタイトル
 preexec () { print -Pn "\e]0;$1\a" }
