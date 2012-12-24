@@ -1,0 +1,10 @@
+[color]
+  ui = true
+[user]
+  name = misogi
+  email = dev@misogi.info
+[alias]
+  st = status -sb
+  up = pull --rebase
+[push]
+  default = tracking
