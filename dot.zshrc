@@ -9,6 +9,9 @@ export LANG=ja_JP.UTF-8
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
 
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 ### 
 # Set shell options
 ###
@@ -64,7 +67,7 @@ zstyle ':completion:*:default' menu select=1
 #zstyle ":vcs_info:git:*" stagedstr "%F{yellow}"
 
 PROMPT=$'%{\e[36m%}%T%%%{\e[m%}`_git_not_pushed` '
-RPROMPT=$'[`prompt-svn``rprompt-git` %{\e[36m%}%~]%{\e[m%}'
+RPROMPT=$'[`rprompt-git` %{\e[36m%}%~]%{\e[m%}'
 PROMPT2="%_%% "
 
 
