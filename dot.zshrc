@@ -160,7 +160,8 @@ preexec () { print -Pn "\e]0;$1\a" }
 
 alias where="command -v"
 
-alias ls="ls --color=auto"
+#alias ls="ls --color=auto"
+alias ls="ls -G"
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
