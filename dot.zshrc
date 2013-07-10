@@ -166,10 +166,17 @@ preexec () { print -Pn "\e]0;$1\a" }
 
 #aliases
 
+case ${OSTYPE} in
+    darwin*)
+        alias ls="ls -G"
+        ;;
+    linux*)
+        alias ls="ls --color=auto"
+        ;;
+esac
+
 alias where="command -v"
 
-alias ls="ls --color=auto"
-#alias ls="ls -G"
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
