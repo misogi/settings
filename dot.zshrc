@@ -12,6 +12,9 @@ bindkey "^[OF" end-of-line
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
 ### 
 # Set shell options
 ###
@@ -163,8 +166,8 @@ preexec () { print -Pn "\e]0;$1\a" }
 
 alias where="command -v"
 
-#alias ls="ls --color=auto"
-alias ls="ls -G"
+alias ls="ls --color=auto"
+#alias ls="ls -G"
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
