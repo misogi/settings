@@ -9,9 +9,11 @@ export LANG=ja_JP.UTF-8
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
 
+# for Mac
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
+# for fedora19 on my laptop
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
