@@ -169,6 +169,7 @@ preexec () { print -Pn "\e]0;$1\a" }
 case ${OSTYPE} in
     darwin*)
         alias ls="ls -G"
+        eval "$(rbenv init -)"
         ;;
     linux*)
         alias ls="ls --color=auto"
