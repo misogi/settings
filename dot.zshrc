@@ -16,12 +16,14 @@ bindkey '^[[F' end-of-line
 # for fedora19 on my laptop
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+bindkey "^[[5~" up-line-or-history
+bindkey "^[[6~" down-line-or-history
 
-### 
+###
 # Set shell options
 ###
-setopt auto_menu          # 補完キー連打で次の候補     
-setopt auto_param_slash   # 補完の時/を自動で入れる 
+setopt auto_menu          # 補完キー連打で次の候補
+setopt auto_param_slash   # 補完の時/を自動で入れる
 setopt rm_star_silent     # rm * のとき確認
 setopt extended_glob      # ファイル名の指定が柔軟になる *.(cpp|h)
 setopt list_types         # ファイル種別をマーク表示
@@ -77,9 +79,9 @@ PROMPT2="%_%% "
 
 
 function rprompt-git {
-	if test -z $(git rev-parse --git-dir 2> /dev/null); then 
-	  return 
-	fi 
+	if test -z $(git rev-parse --git-dir 2> /dev/null); then
+	  return
+	fi
         local name st color gitdir action
         if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
                 return
@@ -107,9 +109,9 @@ function rprompt-git {
 # http://yuroyoro.hatenablog.com/entry/20110219/1298089409
 function _git_not_pushed()
 {
-  if test -z $(git rev-parse --git-dir 2> /dev/null); then 
-      return 
-  fi 
+  if test -z $(git rev-parse --git-dir 2> /dev/null); then
+      return
+  fi
   if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ]; then
         head="$(git rev-parse HEAD)"
         for x in $(git rev-parse --remotes)
@@ -130,11 +132,11 @@ function prompt-svn {
     then
         return
     fi
-    
+
     revision=`echo ${__svn_status[2]}`
-    
+
     st=`svn status 2> /dev/null`
-    
+
     if [[ -n `echo "$st" | grep "^M"` ]]; then
         color=%F{red}
     elif [[ -n `echo "$st" | grep "^?"` ]]; then
