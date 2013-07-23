@@ -8,3 +8,6 @@
   up = pull --rebase
 [push]
   default = tracking
+[core]
+  editor = vim
+
