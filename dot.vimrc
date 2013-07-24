@@ -13,9 +13,12 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 
+NeoBundle 'tpope/vim-rails', { 'autoload' : {
+      \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
+
+" ------------------- NeoComplete ------------------------------
 if has('lua')
   NeoBundle 'Shougo/neocomplete'
-  " ------------------- NeoComplete ------------------------------
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
   " " Use neocomplete.
@@ -43,6 +46,32 @@ if has('lua')
   inoremap <expr><C-y>  neocomplete#close_popup()
   inoremap <expr><C-e>  neocomplete#cancel_popup()
 endif
+
+" ------------------ vim-rails -------------------------------
+""{{{
+let g:rails_default_file='config/database.yml'
+let g:rails_level = 4
+let g:rails_mappings=1
+let g:rails_modelines=0
+let g:rails_statusline = 1
+
+function! SetUpRailsSetting()
+  nnoremap <buffer><Space>r :R<CR>
+  nnoremap <buffer><Space>a :A<CR>
+  nnoremap <buffer><Space>m :Rmodel<Space>
+  nnoremap <buffer><Space>c :Rcontroller<Space>
+  nnoremap <buffer><Space>v :Rview<Space>
+  nnoremap <buffer><Space>p :Rpreview<CR>
+endfunction
+
+aug MyAutoCmd
+  au User Rails call SetUpRailsSetting()
+aug END
+
+aug RailsDictSetting
+  au!
+aug END
+"}}}
 
 " -------------------  ------------------------------
 filetype indent on
