@@ -10,10 +10,10 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
-NeoBundle 'Shougo/neobundle.vim'
+"#call neobundle#rc(expand('~/.vim/bundle/'))
+"#NeoBundle 'Shougo/neobundle.vim'
 
-NeoBundle 'tpope/vim-rails', { 'autoload' : {
+"#NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 
 " ------------------- NeoComplete ------------------------------
