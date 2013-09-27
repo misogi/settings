@@ -1,0 +1,12 @@
+{
+    "show_debug": false,
+    "phpcs_sniffer_run": false,
+    "phpcs_linter_run": false,
+    "phpcs_linter_command_on_save": false,
+    "phpcs_command_on_save": false,
+    "phpcs_php_prefix_path": "C:/php53/php.exe",
+    "phpcs_commands_to_php_prefix": ["Fixer"],
+    "php_cs_fixer_on_save": true,
+    "php_cs_fixer_show_quick_panel": true,
+    "php_cs_fixer_executable_path": "C:\\php53\\php-cs-fixer.phar"
+}
