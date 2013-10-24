@@ -2,7 +2,7 @@
 #
 # LANG
 #
-export LANG=ja_JP.UTF-8
+#export LANG=ja_JP.UTF-8
 
 # home and end key
 
@@ -160,11 +160,13 @@ kterm*|xterm)
   precmd() {
     echo -n "\e]2;$(date)\a"
   }
+  preexec () { 
+    print -Pn "\e]0;$1\a" 
+  }
   ;;
 esac
 
 # ターミナルタイトル
-preexec () { print -Pn "\e]0;$1\a" }
 
 #aliases
 
