@@ -50,7 +50,7 @@ URxvt*background: Black
 #URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
 #URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
 
-URxvt.font: xft:ricty:pixelsize=14
+URxvt.font: xft:ricty:pixelsize=15
 
 # Replace blue folder colors with a lighter shade for clarity. To
 #  set colored folders and files within urxvt, xterm, and aterm, add
