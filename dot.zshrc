@@ -40,10 +40,8 @@ setopt hist_ignore_space  # 行頭にスペースがあったらhistoryに保存
 unsetopt extended_history   # 履歴に時間を記録
 unsetopt sun_keyboard_hack  # `のtypoをカバーする
 
-autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 autoload -U compinit
 compinit -u
-autoload vcs_info
 
 # VCS settings
 
@@ -55,74 +53,59 @@ SAVEHIST=20000
 zstyle ':completion:*' list-colors 'no=00' 'fi=00' 'di=00;34' 'ln=01;36' 'pi=40;33' 'so=40;33' 'bd=40;33' 'cd=40;33' 'ex=01;31' 'or=04;36' '*.tgz=01;32' '*.gz=01;32' '*.tar=01;32'
 
 # apt-getとか時間のかかるコマンドにキャッシュを使う
-zstyle ':completion:*' use-cache true
+#zstyle ':completion:*' use-cache true
 # 補完候補を ←↓↑→ で選択 (補完候補が色分け表示される)
-zstyle ':completion:*:default' menu select=1
+#zstyle ':completion:*:default' menu select=1
 
-# for git
-#zstyle ":vcs_info:*" enable git
+autoload vcs_info
+zstyle ":vcs_info:*" enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
-# commitしていない変更をチェックする
-#zstyle ":vcs_info:git:*" check-for-changes true
-# gitリポジトリに対して、変更情報とリポジトリ情報を表示する
-#zstyle ":vcs_info:git:*" formats "%c%u%b"
-# gitリポジトリに対して、コンフリクトなどの情報を表示する
-#zstyle ":vcs_info:git:*" actionformats "%c%u<%a>[%b:%r]"
-# addしていない変更があることを示す文字列
-#zstyle ":vcs_info:git:*" unstagedstr "%F{red}"
-# commitしていないstageがあることを示す文字列
-#zstyle ":vcs_info:git:*" stagedstr "%F{yellow}"
 
-PROMPT=$'%{\e[36m%}%T%%%{\e[m%}`_git_not_pushed` '
+PROMPT=$'%{\e[36m%}%T%%%{\e[m%} '
 RPROMPT=$'[`rprompt-git` %{\e[36m%}%~]%{\e[m%}'
 PROMPT2="%_%% "
 
 
 function rprompt-git {
-	if test -z $(git rev-parse --git-dir 2> /dev/null); then
-	  return
-	fi
-        local name st color gitdir action
-        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-                return
-        fi
-        name=`git branch 2> /dev/null | grep '^\*' | cut -b 3-`
-        if [[ -z $name ]]; then
-                return
-        fi
+	  if test -z $(git rev-parse --git-dir 2> /dev/null); then
+	    return
+	  fi
 
-        st=`git status 2> /dev/null`
-        if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-                color=%F{green}
-        elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
-                color=%F{yellow}
-        elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-                color=%B%F{red}
-        else
-                 color=%F{red}
-        fi
+    vcs_info 
+    echo $vcs_info_msg_0_
+    return
 
-        echo "$color$name$action%f%b "
-}
+    #st=`git status`
+    #if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+    #    color=%F{green}
+    #elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+    #    color=%F{yellow}
+    #elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
+    #    color=%B%F{red}
+    #else
+    #    color=%F{red}
+    #fi
 
-# push忘れ防止関数
-# http://yuroyoro.hatenablog.com/entry/20110219/1298089409
-function _git_not_pushed()
-{
-  if test -z $(git rev-parse --git-dir 2> /dev/null); then
-      return
-  fi
-  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = "true" ]; then
-        head="$(git rev-parse HEAD)"
-        for x in $(git rev-parse --remotes)
-        do
-            if [ "$head" = "$x" ]; then
-                return 0
-            fi
-        done
-        echo "%B%F{red}{PUSH忘れ}%f%b"
-    fi
-    return 0
+    # push忘れ防止関数
+    # http://yuroyoro.hatenablog.com/entry/20110219/1298089409
+    #if [ "$(git rev-parse --is-inside-work-tree)" = "true" ]; then
+    #    head="$(git rev-parse HEAD)"
+    #    for x in $(git rev-parse --remotes)
+    #    do
+    #        if [ "$head" = "$x" ]; then
+    #            echo "1"
+    #            return 0
+    #        fi
+    #    done
+    #    push="%B%F{red}{PUSH忘れ}%f%b"
+    #fi
+
+    echo "$color$name$action%f%b "
 }
 
 function prompt-svn {
@@ -155,16 +138,16 @@ function prompt-svn {
 ## Default shell configuration
 
 # set terminal title including current directory
-case "${TERM}" in
-kterm*|xterm)
-  precmd() {
-    echo -n "\e]2;$(date)\a"
-  }
-  preexec () { 
-    print -Pn "\e]0;$1\a" 
-  }
-  ;;
-esac
+#case "${TERM}" in
+#kterm*|xterm)
+#  precmd() {
+#    echo -n "\e]2;$(date)\a"
+#  }
+#  preexec () {
+#    print -Pn "\e]0;$1\a"
+#  }
+#  ;;
+#esac
 
 # ターミナルタイトル
 
@@ -201,4 +184,3 @@ alias globalip='curl ipcheck.ieserver.net'
 
 # for colorized svn diff
 alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
-
