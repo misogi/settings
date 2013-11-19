@@ -163,6 +163,8 @@ case ${OSTYPE} in
         ;;
 esac
 
+stty stop undef
+
 alias where="command -v"
 
 alias la="ls -a"
