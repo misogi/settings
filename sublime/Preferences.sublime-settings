@@ -1,5 +1,5 @@
 {
-    "rulers": [80],
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
 	[
@@ -8,13 +8,21 @@
 		"*.mp3",
 		"*.ico",
 		"*.zip",
-		"*.swf"
+		"*.swf",
+		"*.gif",
+		"*.png",
+		"*.jpg"
 	],
-	"font_size": 9,
+	"font_face": "Ricty",
+	"font_size": 12,
 	"highlight_line": true,
 	"ignored_packages":
 	[
 		"Vintage"
+	],
+	"rulers":
+	[
+		80
 	],
 	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
