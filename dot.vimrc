@@ -3,6 +3,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set nocompatible
+set term=linux
 syntax on
 filetype on
 
