@@ -76,7 +76,7 @@ function rprompt-git {
 	    return
 	  fi
 
-    vcs_info 
+    vcs_info
     echo $vcs_info_msg_0_
     return
 
@@ -156,7 +156,6 @@ function prompt-svn {
 case ${OSTYPE} in
     darwin*)
         alias ls="ls -G"
-        eval "$(rbenv init -)"
         ;;
     linux*)
         alias ls="ls --color=auto"
