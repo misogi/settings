@@ -186,3 +186,4 @@ alias globalip='curl ipcheck.ieserver.net'
 
 # for colorized svn diff
 alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
+
