@@ -14,8 +14,8 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
 # for fedora19 on my laptop
-bindkey "^[[7~" beginning-of-line
-bindkey "^[[8~" end-of-line
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 bindkey "^[[5~" up-line-or-history
 bindkey "^[[6~" down-line-or-history
 
@@ -185,3 +185,4 @@ alias globalip='curl ipcheck.ieserver.net'
 
 # for colorized svn diff
 alias svndiff="svn diff . | /usr/share/vim/vim73/macros/less.sh"
+
