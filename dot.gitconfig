@@ -10,4 +10,9 @@
   default = tracking
 [core]
   editor = vim
+[diff]
+  algorithm = histogram
 
+
+[help]
+	autocorrect = 0
