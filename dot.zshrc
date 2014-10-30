@@ -19,6 +19,12 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[5~" up-line-or-history
 bindkey "^[[6~" down-line-or-history
 
+## plugins
+#
+# syntax highlight
+
+[[ -f $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ###
 # Set shell options
 ###
