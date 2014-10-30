@@ -12,12 +12,12 @@ filetype off
 "golint
 " exe "set rtp+=" . globpath($GOPATH, "src/github.com/golang/lint/misc/vim")
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Bundle 'Blackrush/vim-gocode'
+"Plugin 'gmarik/Vundle.vim'
+"Bundle 'Blackrush/vim-gocode'
 
-call vundle#end()       
+"call vundle#end()       
 filetype plugin indent on
 
