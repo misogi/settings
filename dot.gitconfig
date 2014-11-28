@@ -16,3 +16,7 @@
 
 [help]
 	autocorrect = 0
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
