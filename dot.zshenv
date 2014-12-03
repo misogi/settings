@@ -9,4 +9,4 @@ export GOPATH=~/.gopath
 export PATH=$HOME/.rbenv/shims:$PATH
 if which rbenv > /dev/null 2>&1 ; then eval "$(rbenv init -)"; fi
 
-export PATH=/usr/local/sbin:~/.rbenv/shims:$PATH:$HOME/bin
+export PATH=/usr/local/sbin:$PATH:$HOME/bin
