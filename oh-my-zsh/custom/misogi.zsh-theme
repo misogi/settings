@@ -13,6 +13,6 @@ ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} x"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} R"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ="
 
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[blue]%} 前"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[blue]%} 後"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[red]%} PUSH!!"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[yellow]%} PULL"
 
