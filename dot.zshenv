@@ -1,6 +1,5 @@
 export SVN_EDITOR=vim
 
-=======
 export GOPATH=~/.gopath
 
 # for Play Framework
