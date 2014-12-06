@@ -1,7 +1,7 @@
 [color]
   ui = true
 [user]
-  name = Ryudo Nakagawa 
+  name = Ryudo Nakagawa
   email = nkgw.ry@gmail.com
 [alias]
   st = status -sb
@@ -12,7 +12,5 @@
   editor = vim
 [diff]
   algorithm = histogram
-
-
 [help]
 	autocorrect = 0
