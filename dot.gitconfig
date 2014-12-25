@@ -1,8 +1,8 @@
 [color]
   ui = true
 [user]
-  name = Ryudo Nakagawa
-  email = nkgw.ry@gmail.com
+  name = misoti 
+  email = dev@misogi.info
 [alias]
   st = status -sb
   up = pull --rebase
