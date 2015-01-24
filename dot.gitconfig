@@ -1,7 +1,7 @@
 [color]
   ui = true
 [user]
-  name = misoti 
+	name = misogi
   email = dev@misogi.info
 [alias]
   st = status -sb
