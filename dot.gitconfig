@@ -6,6 +6,7 @@
 [alias]
   st = status -sb
   up = pull --rebase
+	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
 [push]
   default = tracking
 [core]
