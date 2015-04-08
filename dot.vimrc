@@ -3,7 +3,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set nocompatible
-set term=linux
+"set term=linux
 syntax on
 filetype off 
 
@@ -19,5 +19,5 @@ filetype off
 "Bundle 'Blackrush/vim-gocode'
 
 "call vundle#end()       
-filetype plugin indent on
+"filetype plugin indent on
 
