@@ -53,7 +53,7 @@ plugins=(git brew osx gem npm golang zsh-syntax-highlighting)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-
+source /Users/ryudo/.phpbrew/bashrc
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
