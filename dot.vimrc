@@ -1,11 +1,11 @@
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set autoindent
+"set autoindent
 set nocompatible
 "set term=linux
 syntax on
-filetype off 
+"filetype off 
 
 " gocode
 " set rtp+=$GOROOT/misc/vim

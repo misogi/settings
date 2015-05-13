@@ -10,3 +10,5 @@ export PATH=$HOME/.rbenv/shims:$PATH
 if which rbenv > /dev/null 2>&1 ; then eval "$(rbenv init -)"; fi
 
 export PATH=/usr/local/sbin:$PATH:$HOME/bin
+
+#export RUBYOPT=-w
