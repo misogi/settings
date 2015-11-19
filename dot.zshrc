@@ -45,7 +45,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew osx gem npm golang zsh-syntax-highlighting)
+
+plugins=(git brew gem npm zsh-syntax-highlighting)
 
 # User configuration
 
@@ -53,7 +54,7 @@ plugins=(git brew osx gem npm golang zsh-syntax-highlighting)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source /Users/ryudo/.phpbrew/bashrc
+# source /Users/ryudo/.phpbrew/bashrc
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -78,3 +79,5 @@ source /Users/ryudo/.phpbrew/bashrc
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+eval "$(rbenv init - zsh)"
