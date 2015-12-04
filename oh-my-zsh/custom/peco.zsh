@@ -9,7 +9,9 @@ function peco-execute-history() {
 
   BUFFER="$item"
   CURSOR=$#BUFFER
-  zle accept-line
+  if [[ $? = 0 ]]; then
+    zle accept-line
+  fi
 }
 
 zle -N peco-execute-history
