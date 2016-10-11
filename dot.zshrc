@@ -80,4 +80,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval "$(rbenv init - zsh)"
+if type rbenv > /dev/null; then
+  eval "$(rbenv init - zsh)"
+fi
