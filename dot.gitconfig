@@ -1,8 +1,8 @@
 [color]
   ui = true
 [user]
-	name = misogi
-  email = dev@misogi.info
+	name = Ryudo Nakagawa
+	email = nkgw.ry@gmail.com
 [alias]
   st = status -sb
   up = pull --rebase
@@ -13,6 +13,7 @@
   editor = vim
 [diff]
   algorithm = histogram
+	compactionHeuristic = true
 [help]
 	autocorrect = 0
 [filter "media"]
@@ -21,3 +22,9 @@
 	smudge = git media smudge %f
 [fetch]
 	prune = true
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight
