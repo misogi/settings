@@ -81,3 +81,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(rbenv init - zsh)"
+
+export PATH="$HOME/.yarn/bin:$PATH"
