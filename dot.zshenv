@@ -1,9 +1,17 @@
-export SVN_EDITOR=vim
-#export APP_ENV=development
-export GOPATH=~/.gopath
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-# for Play Framework
-#export _JAVA_OPTIONS="-Xms256m -Xmx256m"
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
 
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=$PATH:$HOME/bin
+export PATH="$HOME/.yarn/bin:$PATH"
+export GOPATH=~/.gopath
 
