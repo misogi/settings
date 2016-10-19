@@ -83,3 +83,7 @@ source $ZSH/oh-my-zsh.sh
 if type rbenv > /dev/null; then
   eval "$(rbenv init - zsh)"
 fi
+
+if [[ -e /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
