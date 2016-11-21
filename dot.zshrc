@@ -16,3 +16,5 @@ if type rbenv > /dev/null; then
 fi
 
 setopt IGNOREEOF
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
