@@ -16,3 +16,5 @@ if type rbenv > /dev/null; then
 fi
 
 setopt IGNOREEOF
+# auto correct
+unsetopt CORRECT
